@@ -1,0 +1,476 @@
+:root {
+    --bg: #000000;
+    --bg-alt: #111111;
+    --fg: #ffffff;
+    --accent: #f5f5f5;
+    --muted: #888888;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid #222;
+    backdrop-filter: blur(6px);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-wrap img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+main {
+    padding-bottom: 3rem;
+}
+
+#hero {
+    position: relative;
+    background-image: url("banner2.jpg");  /* your file name */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 380px;    /* adjust as needed */
+    padding: 10rem 0;      /* space inside */
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);  /* dark overlay for readability */
+    backdrop-filter: blur(1px);
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#hero .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+#hero h1 {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 1.5rem;
+}
+
+#hero p.lead {
+    font-size: 1rem;
+    color: var(--accent);
+    max-width: 34rem;
+    margin: 1.75rem auto;   /* auto centers the block */
+    text-align: center;     /* center the text inside */
+}
+
+.tagline {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.hero-box {
+    border: 1px solid #222;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #050505, #111111);
+}
+
+.hero-box h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 1rem;
+}
+
+.hero-box p {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+.section {
+    padding: 3rem 0;
+    border-top: 1px solid #111;
+    background: var(--bg-alt);
+}
+
+.section:nth-of-type(even) {
+    background: #050505;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.card {
+    border: 1px solid #222;
+    padding: 1.5rem;
+    background: #030303;
+    min-height: 150px;
+}
+
+.card h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.75rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.schedule-list {
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+.schedule-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #151515;
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule-day {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.1rem;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    gap: 2rem;
+}
+
+.contact-details {
+    font-size: 0.95rem;
+    color: var(--accent);
+}
+
+.contact-details p + p {
+    margin-top: 0.5rem;
+}
+
+.contact-label {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+}
+
+form {
+    display: grid;
+    gap: 0.9rem;
+}
+
+label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background: #050505;
+    color: var(--fg);
+    font: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+footer {
+    border-top: 1px solid #111;
+    padding: 1.5rem 0;
+    background: #000;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+}
+
+.social-links a {
+    color: var(--fg);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+    display: none;
+    }
+
+    #hero {
+    padding-top: 2.5rem;
+    }
+
+    #hero .hero-inner {
+    grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+    grid-template-columns: 1fr;
+    }
+}
+
+.schedule-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #222;
+    background: #030303;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #222;
+    padding: 0.75rem;
+    vertical-align: top;
+}
+
+.schedule-table th {
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    background: #050505;
+}
+
+.session {
+    margin-bottom: 0.5rem;
+    padding: 0.4rem 0.45rem;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background: #050505;
+}
+
+.session-time {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #aaaaaa;
+    margin-bottom: 0.15rem;
+}
+
+.session-title {
+    font-size: 0.9rem;
+}
+
+.schedule-note {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #888888;
+}
+
+.schedule-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #222;
+  background: #030303;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #222;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+.schedule-table th {
+  text-align: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background: #050505;
+}
+
+.session {
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #050505;
+}
+
+.session-time {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #aaaaaa;
+  margin-bottom: 0.15rem;
+}
+
+.session-title {
+  font-size: 0.9rem;
+}

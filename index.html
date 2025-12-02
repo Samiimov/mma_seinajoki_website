@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8" />
+        <title>MMA Seinäjoki</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container nav">
+                <div class="logo-wrap">
+                    <img src="logo-mma-seinajoki.png" alt="MMA Seinäjoki logo" />
+                    <div class="logo-text">MMA Seinäjoki</div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="hero">
+                <div class="container">
+                    <div>
+                        <div class="tagline">Vapaaottelu • Potkunyrkkeily • Defendo • Krav Maga • Judo • BJJ • Lukkopaini</div>
+                        <h1>MMA Seinäjoki</h1>
+                        <p class="lead">
+                            MMA Seinäjoki ry on kamppailu-urheilu seura, jossa harjoitellaan vapaaottelua, lukkopainia, brasilialaista jujutsua, defendoa, krav magaa ja potkunyrkkeilyä. Seura on Suomen vapaaotteluliiton, lukkopainiliiton, Suomen Brasilialaisen Jujutsu liiton ja potkunyrkkeilyliiton jäsen.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Getting started -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-heading">Harjoittelun aloittaminen</h2>
+                    </div>
+
+                    <div class="section-grid">
+                        <div class="card">
+                            <h3>Uusi harrastaja ilman kamppailukokemusta</h3>
+                            <p>
+                                Mikäli olet uusi harrastaja, ilman aiempaa kokemusta kamppailulajeista, 
+                                tapahtuu harrastuksen aloittaminen lajikohtaisen peruskurssien kautta.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Kokenut kamppailija</h3>
+                            <p>
+                                Mikäli sinulla on aiempaa kokemusta kamppailulajeista, voit aloittaa
+                                harrastamisen suoraan normaalien viikkoharjoitusten kautta. Ota yhteyttä 
+                                seuran valmentajiin. Yhteystiedot löytyvät sivun alalaidasta.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCHEDULE -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h1 class="section-heading">Viikkoaikataulu Syksy 2025</h1>
+                    </div>
+
+                    <!-- Tänne JS piirtää taulukon -->
+                    <div id="schedule-table-wrapper" class="schedule-table-wrapper"></div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-heading">Ota yhteyttä</h2>
+                    </div>
+                    <div class="contact-wrapper">
+                    <div class="contact-details">
+                        <div>
+                            <div class="contact-label">Sähköposti</div>
+                            <p><a href="mailto:info@mmaseinajoki.fi">info@mmaseinajoki.fi</a></p>
+                        </div>
+
+                        <div style="margin-top:1rem;">
+                            <div class="contact-label">Puhelin</div>
+                            <p><a href="tel:+358401234567">+358 40 123 4567</a></p>
+                        </div>
+
+                        <div style="margin-top:1rem;">
+                            <div class="contact-label">Osoite</div>
+                            <p>
+                                MMA Seinäjoki<br />
+                                Kauppaneliö 6<br />
+                                60120 Seinäjoki
+                            </p>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container footer-inner">
+                <div>© <span id="year"></span> MMA Seinäjoki</div>
+                    <div class="social-links">
+                        <!-- replace # with real URLs -->
+                        <a href="https://www.instagram.com/mma_seinajoki/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://www.facebook.com/groups/233338680258" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </div>
+                </div>
+            <script>
+                // simple current year in footer
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
+        </footer>
+
+    <script src="schedule.js"></script>
+
+    </body>
+
+</html>
