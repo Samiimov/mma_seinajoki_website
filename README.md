@@ -1,9 +1,3 @@
-Here’s a clean, professional **README.md** tailored for your MMA Seinäjoki GitHub Pages website project.
-
-You can copy this directly into `README.md` in the repository.
-
----
-
 # 🥋 MMA Seinäjoki — Official Website
 
 This repository contains the source code for the **MMA Seinäjoki ry** website, published through **GitHub Pages**.
