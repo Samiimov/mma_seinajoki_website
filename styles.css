@@ -145,6 +145,8 @@ main {
     max-width: 34rem;
     margin: 1.75rem auto;   /* auto centers the block */
     text-align: center;     /* center the text inside */
+    letter-spacing: 0.15em;
+    font-size: 1rem;
 }
 
 .tagline {
@@ -234,7 +236,7 @@ main {
     border: 1px solid #222;
     padding: 1.5rem;
     background: #030303;
-    min-height: 150px;
+    min-height: 220px;
 }
 
 .card h3 {
@@ -536,17 +538,18 @@ footer {
 /* Each column takes ~50% on wide screens, full width when space is tight */
 .contact-column {
     flex: 1 1 300px;   /* grow, shrink, base width 300px */
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
 }
 
 /* Optional: link list styling */
 .contact-links {
     list-style: none;
     padding: 0;
-    margin: 0.5rem 0 0;
 }
 
 .contact-links li{
-    margin-top: 0.3rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.75rem;
@@ -566,3 +569,75 @@ footer {
     margin-top: 2rem;
   }
 }
+
+.fees-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.fees-subheading {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.75rem;
+}
+
+.fees-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fees-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #151515;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+.fees-name {
+  color: var(--accent);
+}
+
+.fees-price {
+  font-weight: 600;
+}
+
+.fees-list-col {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.fees-list-col li {
+  padding: 0.2rem 0;
+}
+
+.fees-iban {
+  font-family: monospace;
+  letter-spacing: 0.08em;
+}
+
+.fees-note {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.fees-contacts a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.fees-contacts a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .fees-grid {
+    grid-template-columns: 1fr;
+  }
