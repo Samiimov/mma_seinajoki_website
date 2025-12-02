@@ -526,6 +526,36 @@ footer {
   margin-bottom: 0.2rem;
 }
 
+.contact-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* Each column takes ~50% on wide screens, full width when space is tight */
+.contact-column {
+    flex: 1 1 300px;   /* grow, shrink, base width 300px */
+}
+
+/* Optional: link list styling */
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.contact-links li{
+    margin-top: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+}
+
+.contact-links a {
+    border-bottom: 1px solid transparent;
+}
+
 /* Make contact-wrapper stack nicely on mobile */
 @media (max-width: 768px) {
   .contact-wrapper {

@@ -9,7 +9,7 @@
     <body>
 
         <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v24.0&appId=123031821067685"></script>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v24.0"></script>
 
         <header>
             <div class="container nav">
@@ -79,24 +79,16 @@
                     <div class="section-header">
                         <h2 class="section-heading">Ota yhteyttä</h2>
                     </div>
-                    
-                    <div>
-                        <p>
-                            Seuran aktiivinen viestintä tapahtuu MMA Seinäjoki Facebook-ryhmässä. Lisätietoja harrastamisesta ja muista asioista saat ottamalla yhteyttä seuran
-                            yhteyshenkilöihin. 
-                        </p>
-                    </div>
 
-                    <div class="contact-details">
-                        
-                        <div class="contacts-people">
+                    <div class="contact-columns">
+                        <div class="contact-column">
                             <div class="contact-label">Yhteyshenkilöt</div>
                             <div id="contacts-list" class="contacts-grid">
-                            <!-- JS inserts cards here -->
+                                <!-- JS inserts cards here -->
                             </div>
                         </div>
 
-                        <div style="margin-top:1rem;">
+                        <div class="contact-column">
                             <div class="contact-label">Osoite</div>
                             <p>
                                 MMA Seinäjoki<br />
@@ -104,9 +96,25 @@
                                 60120 Seinäjoki
                             </p>
                         </div>
+                        
+                        <!-- COLUMN 2: Linkit eri sivuille -->
+                        <div class="contact-column">
+                            <div class="contact-label">Linkit</div>
+                            <ul class="contact-links">
+                                <li><a target="_blank" href="https://www.facebook.com/groups/MMASeinajoki">Facebook-sivu</a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/mmaseinajoki">Facebook-ryhmä</a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/mma_seinajoki/">Instagram</a></li>
+                            </ul>
+                        </div>
+
                     </div>
+
+                </div>
+
                 </div>
             </section>
+
+
         </main>
 
         <footer>
