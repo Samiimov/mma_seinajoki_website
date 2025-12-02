@@ -7,6 +7,12 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
+
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0">
+        </script>
+
         <header>
             <div class="container nav">
                 <div class="logo-wrap">
@@ -69,22 +75,44 @@
                 </div>
             </section>
 
+            <div class="section">
+                <div class="container">
+                    <h2 class="section-heading">Facebook</h2>
+
+                    <div class="fb-page"
+                        data-href="https://www.facebook.com/groups/233338680258"
+                        data-tabs="timeline"
+                        data-width="500"
+                        data-height=""
+                        data-small-header="false"
+                        data-adapt-container-width="true"
+                        data-hide-cover="false"
+                        data-show-facepile="true">
+                    </div>
+                </div>
+            </div>
+
             <!-- CONTACT -->
             <section id="contact" class="section">
                 <div class="container">
                     <div class="section-header">
                         <h2 class="section-heading">Ota yhteyttä</h2>
                     </div>
-                    <div class="contact-wrapper">
-                    <div class="contact-details">
-                        <div>
-                            <div class="contact-label">Sähköposti</div>
-                            <p><a href="mailto:info@mmaseinajoki.fi">info@mmaseinajoki.fi</a></p>
-                        </div>
+                    
+                    <div>
+                        <p>
+                            Seuran aktiivinen viestintä tapahtuu MMA Seinäjoki Facebook-ryhmässä. Lisätietoja harrastamisesta ja muista asioista saat ottamalla yhteyttä seuran
+                            yhteyshenkilöihin. 
+                        </p>
+                    </div>
 
-                        <div style="margin-top:1rem;">
-                            <div class="contact-label">Puhelin</div>
-                            <p><a href="tel:+358401234567">+358 40 123 4567</a></p>
+                    <div class="contact-details">
+                        
+                        <div class="contacts-people">
+                            <div class="contact-label">Yhteyshenkilöt</div>
+                            <div id="contacts-list" class="contacts-grid">
+                            <!-- JS inserts cards here -->
+                            </div>
                         </div>
 
                         <div style="margin-top:1rem;">
@@ -95,8 +123,6 @@
                                 60120 Seinäjoki
                             </p>
                         </div>
-                    </div>
-
                     </div>
                 </div>
             </section>
@@ -117,7 +143,7 @@
             </script>
         </footer>
 
-    <script src="schedule.js"></script>
+    <script src="scripts.js"></script>
 
     </body>
 

@@ -1,4 +1,4 @@
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Read schedule.txt
     fetch("schedule.txt")
     .then(response => response.text())
@@ -12,9 +12,24 @@
         document.getElementById("schedule-table-wrapper").innerHTML =
         "<p style='color:red'>Aikataulua ei voitu ladata.</p>";
     });
+    
+    // --- Yhteyshenkilöt ---
+    fetch("contacts.json")
+    .then(response => response.json())
+    .then(contacts => {
+        const container = document.getElementById("contacts-list");
+        if (!container) return;
+        container.innerHTML = buildContactsHtml(contacts);
+    })
+    .catch(err => {
+        console.error("Failed to load contacts.json:", err);
+        const container = document.getElementById("contacts-list");
+        if (container) {
+        container.innerHTML =
+            "<p style='color:red'>Yhteyshenkilöiden tietoja ei voitu ladata.</p>";
+        }
+    });
 });
-
-// SAME PARSE + TABLE FUNCTIONS AS BEFORE:
 
 const DAY_ORDER = [
     "Maanantai",
@@ -93,6 +108,46 @@ function buildScheduleTable(schedule) {
 
     html += "</tbody></table>";
     return html;
+}
+
+function buildContactsHtml(contacts) {
+    if (!Array.isArray(contacts) || contacts.length === 0) {
+    return "<p>Yhteyshenkilöitä ei ole määritelty.</p>";
+    }
+
+    return contacts
+    .map(c => {
+        const name = escapeHtml(c.name || "");
+        const role = escapeHtml(c.role || "");
+        const email = c.email ? escapeHtml(c.email) : "";
+        const phone = c.phone ? escapeHtml(c.phone) : "";
+
+        return `
+        <div class="contact-card">
+            <div class="contact-card-name">${name}</div>
+            ${
+            role
+                ? `<div class="contact-card-role">${role}</div>`
+                : ""
+            }
+            ${
+            email
+                ? `<div class="contact-card-line">
+                    <p href="mailto:${email}">${email}</p>
+                </div>`
+                : ""
+            }
+            ${
+            phone
+                ? `<div class="contact-card-line">
+                    <p>${phone}</p>
+                </div>`
+                : ""
+            }
+        </div>
+        `;
+    })
+    .join("");
 }
 
 function escapeHtml(str) {
