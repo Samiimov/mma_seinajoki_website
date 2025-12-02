@@ -11,8 +11,8 @@ The site includes:
 * Responsive layout
 * Background hero image
 
-Live site:
-👉 *(Add the GitHub Pages link here once published)*
+Currently live at:
+👉 *https://samiimov.github.io/mma_seinajoki_website/*
 
 ---
 
